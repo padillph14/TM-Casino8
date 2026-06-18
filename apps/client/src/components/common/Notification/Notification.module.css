@@ -1,0 +1,141 @@
+.notification {
+  position: fixed;
+  z-index: 99999;
+  min-width: 300px;
+  max-width: 500px;
+  padding: 16px 20px;
+  border-radius: 12px;
+  background: #1a1a2e;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.5);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Positions */
+.top-right {
+  top: 20px;
+  right: 20px;
+}
+
+.top-left {
+  top: 20px;
+  left: 20px;
+}
+
+.bottom-right {
+  bottom: 20px;
+  right: 20px;
+}
+
+.bottom-left {
+  bottom: 20px;
+  left: 20px;
+}
+
+/* Types */
+.success {
+  border-color: #4CAF50;
+}
+
+.success .icon {
+  color: #4CAF50;
+}
+
+.error {
+  border-color: #FF4444;
+}
+
+.error .icon {
+  color: #FF4444;
+}
+
+.warning {
+  border-color: #FF9800;
+}
+
+.warning .icon {
+  color: #FF9800;
+}
+
+.info {
+  border-color: #2196F3;
+}
+
+.info .icon {
+  color: #2196F3;
+}
+
+/* States */
+.show {
+  transform: translateX(0);
+  opacity: 1;
+}
+
+.hide {
+  transform: translateX(100%);
+  opacity: 0;
+}
+
+.top-left.hide {
+  transform: translateX(-100%);
+}
+
+.bottom-right.hide {
+  transform: translateX(100%);
+}
+
+.bottom-left.hide {
+  transform: translateX(-100%);
+}
+
+.content {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.icon {
+  font-size: 20px;
+  font-weight: 700;
+  flex-shrink: 0;
+}
+
+.message {
+  flex: 1;
+  color: #e0e0e0;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.closeBtn {
+  background: none;
+  border: none;
+  color: rgba(255, 255, 255, 0.3);
+  font-size: 24px;
+  cursor: pointer;
+  padding: 0 4px;
+  transition: color 0.3s ease;
+}
+
+.closeBtn:hover {
+  color: #FF4444;
+}
+
+.progressBar {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 3px;
+  background: linear-gradient(90deg, #FFD700, #FFA500);
+  border-radius: 0 0 12px 12px;
+  animation: progress linear forwards;
+}
+
+@keyframes progress {
+  from {
+    width: 100%;
+  }
+  to {
+    width: 0%;
+  }
+}
